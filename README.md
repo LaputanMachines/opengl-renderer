@@ -12,3 +12,25 @@ This is a proof-of-concept _and_ a learning tool for myself.
 [Aquinas Games](https://aquinasgames.ca) was founded in April 2020.
 Good game development necessitates a good understanding of graphics.
 Renderer based off the lessons in the [TinyRenderer Wiki](https://github.com/ssloy/tinyrenderer/wiki).
+
+---
+
+## Lesson One: Wireframe Rendering
+
+The first step to building a renderer was to render a file filled with 3D vectors (an `obj` file) by drawing lines on the screen. 
+This was done by using the [Bresenham's Line Algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm).
+The final result was a wireframe image. The background is black and the lines are white.
+To build off of this wireframe, we can fill in the triangles made by the wireframe model.
+
+![Wireframe Render](/devlog/lesson-1-wireframe.png)
+
+## Lesson Two: Fill Wireframe With Triangles
+
+The next step was to fill and illuminate the space between wireframe lines.
+We can assume all triangles drawn will be filled in. 
+Then, we can illuminate our triangles by noticing that polygons that are parallel to the light vector won't be illuminated at all.
+I.e. the intensity of illumination is equal to the scalar product of the light vector and the normal to the given triangle.
+The result is that we can simulate light sources hitting our model from the front (where the camera is hypothetically facing).
+Note that negative dot products mean that the light source is behind the polygon. 
+
+![Triangles Filled In](/devlog/lesson-2-triangles.png)
