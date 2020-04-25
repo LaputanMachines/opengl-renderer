@@ -11,3 +11,4 @@ This engine is made open source through the MPL 2.0 license.
 This is a proof-of-concept _and_ a learning tool for myself.
 [Aquinas Games](https://aquinasgames.ca) was founded in April 2020.
 Good game development necessitates a good understanding of graphics.
+Renderer based off the lessons in the [TinyRenderer Wiki](https://github.com/ssloy/tinyrenderer/wiki).
