@@ -46,3 +46,15 @@ A modified version of the Painter's Algorithm is one that only draws in 2 dimens
 To achieve this, the z-axis is rasterized and inserted into the x- and y-axis buffers for painting on the screen. This allows our line drawing algorithm to leverage the Painter's Algorithm to draw 3D images without taxing our system.
 
 ![Only Render Visible Model](/devlog/lesson-3-colour.png)
+
+
+## Lesson Four: Perspective Rendering
+
+Before tackling perspective rendering, we can use texture TGA images to add an actual texture to all of the rasterized triangles drawn from earlier.
+Afterwards, we shift our focus to perspective shifting.
+This is done by performing some simple linear algebra to transform and scale objects. 
+A 2D [Affine Transformation](https://en.wikipedia.org/wiki/Affine_transformation) is done to the 2D buffer we generated before. 
+We can take our 3D image, augment it to 4D, transform it in 4D, and then transform it back to 3D to achieve our perspective-shifted model.
+This is one (very remedial) way of achieving orthographic projections of models in 3D.
+
+![Perspective Rendering](/devlog/lesson-4-perspective.png)
