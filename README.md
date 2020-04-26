@@ -45,7 +45,7 @@ However this algorithm is time consuming and inefficient.
 A modified version of the Painter's Algorithm is one that only draws in 2 dimensions while still maintaining depth.
 To achieve this, the z-axis is rasterized and inserted into the x- and y-axis buffers for painting on the screen. This allows our line drawing algorithm to leverage the Painter's Algorithm to draw 3D images without taxing our system.
 
-![Only Render Visible Model](/devlog/lesson-3-colour.png)
+![Only Render Visible Model](/devlog/lesson-3-colouring.png)
 
 
 ## Lesson Four: Perspective Rendering
