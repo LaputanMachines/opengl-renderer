@@ -173,13 +173,13 @@ public:
         return ret/tmp;
     }
 
-    mat<DimRows,DimCols,T> invert() {
+    mat<DimCols,DimRows,T> invert() {
         return invert_transpose().transpose();
     }
 
     mat<DimCols,DimRows,T> transpose() {
         mat<DimCols,DimRows,T> ret;
-        for (size_t i=DimCols; i--; ret[i]=this->col(i));
+        for (size_t i=DimRows; i--; ret[i]=this->col(i));
         return ret;
     }
 };
