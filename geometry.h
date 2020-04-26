@@ -23,6 +23,7 @@ template <typename T> struct vec<2,T> {
     template <class U> vec<2,T>(const vec<2,U> &v);
           T& operator[](const size_t i)       { assert(i<2); return i<=0 ? x : y; }
     const T& operator[](const size_t i) const { assert(i<2); return i<=0 ? x : y; }
+    float norm() { return std::sqrt(x*x+y*y); }
 
     T x,y;
 };
@@ -173,13 +174,13 @@ public:
         return ret/tmp;
     }
 
-    mat<DimCols,DimRows,T> invert() {
+    mat<DimRows,DimCols,T> invert() {
         return invert_transpose().transpose();
     }
 
     mat<DimCols,DimRows,T> transpose() {
         mat<DimCols,DimRows,T> ret;
-        for (size_t i=DimRows; i--; ret[i]=this->col(i));
+        for (size_t i=DimCols; i--; ret[i]=this->col(i));
         return ret;
     }
 };
