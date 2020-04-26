@@ -35,3 +35,14 @@ The result is that we can simulate light sources hitting our model from the fron
 Note that negative dot products mean that the light source is behind the polygon. 
 
 ![Triangles Filled In](/devlog/lesson-2-triangles.png)
+
+## Lesson Three: Only Render Visible Model
+
+The larger a model gets, the harder a computer will have to work to render it completely.
+We can mitigate this by only rendering what's visible. 
+Starting with the [Painter's Algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm), we can begin to only draw what's visible to our camera.
+However this algorithm is time consuming and inefficient. 
+A modified version of the Painter's Algorithm is one that only draws in 2 dimensions while still maintaining depth.
+To achieve this, the z-axis is rasterized and inserted into the x- and y-axis buffers for painting on the screen. This allows our line drawing algorithm to leverage the Painter's Algorithm to draw 3D images without taxing our system.
+
+![Only Render Visible Model](/devlog/lesson-3-colour.png)
