@@ -58,3 +58,12 @@ We can take our 3D image, augment it to 4D, transform it in 4D, and then transfo
 This is one (very remedial) way of achieving orthographic projections of models in 3D.
 
 ![Perspective Rendering](/devlog/lesson-4-perspective.png)
+
+## Lesson Five: Gouraud Shading
+
+We improve the shading mechanism by interpolating the intensity of each vertex. 
+This is known as [Gouaud Shading](https://en.wikipedia.org/wiki/Gouraud_shading) and it vastly improves the look and feel of the model.
+For this to be visible in the devlog, the texture map is temporarily removed from the model.
+We also add a "camera" by means of a view vector that can be used to recalculate all normals.
+
+![Perspective Rendering](/devlog/lesson-5-gouraud-shading.png)
