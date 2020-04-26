@@ -66,7 +66,7 @@ This is known as [Gouaud Shading](https://en.wikipedia.org/wiki/Gouraud_shading)
 For this to be visible in the devlog, the texture map is temporarily removed from the model.
 We also add a "camera" by means of a view vector that can be used to recalculate all normals.
 
-![Perspective Rendering](/devlog/lesson-5-gouraud-shading.png)
+![Gouraud Shading](/devlog/lesson-5-gouraud-shading.png)
 
 ## Lesson Six: Shaders
 
@@ -78,4 +78,4 @@ Specular mapping is then implemented.
 The result of ambient, diffuse, and specular shading is the [Phong Reflection](https://en.wikipedia.org/wiki/Phong_reflection_model). 
 The final results finally look like actual 3D models and not painted wireframes.
 
-![Perspective Rendering](/devlog/lesson-6-shaders.png)
+![Shaders](/devlog/lesson-6-shading.png)
