@@ -67,3 +67,15 @@ For this to be visible in the devlog, the texture map is temporarily removed fro
 We also add a "camera" by means of a view vector that can be used to recalculate all normals.
 
 ![Perspective Rendering](/devlog/lesson-5-gouraud-shading.png)
+
+## Lesson Six: Shaders
+
+Implementing shaders is a must for any good rendering engine. 
+The Gouraud Shading from earlier is a good start, but we can refactor it to be much more robust. 
+On top of that, proper texture mapping should be implemented, instead of just painting each triangle individually. 
+This can be done by pasting a normal texture map onto the finalized model.
+Specular mapping is then implemented.
+The result of ambient, diffuse, and specular shading is the [Phong Reflection](https://en.wikipedia.org/wiki/Phong_reflection_model). 
+The final results finally look like actual 3D models and not painted wireframes.
+
+![Perspective Rendering](/devlog/lesson-6-shaders.png)
