@@ -79,3 +79,11 @@ The result of ambient, diffuse, and specular shading is the [Phong Reflection](h
 The final results finally look like actual 3D models and not painted wireframes.
 
 ![Shaders](/devlog/lesson-6-shading.png)
+
+
+## Lesson Seven: Shadow Mapping
+
+We implement a shadow buffer vector that's used to compute the intensity of all points on the render.
+The viewport's normal is used to compute intensity and then vectors and meshes that overlap have a shadow applied to them. It's similar to how the Gouraud Shader was implemented, only now we're keeping track of overlapping vectors in the 3D space.
+
+![Shadow Mapping](/devlog/lesson-7-shadow-mapping.png)
