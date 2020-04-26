@@ -15,8 +15,12 @@ Good game development necessitates a good understanding of graphics.
 I've made some changes, but this is very much a product of the lesson plan and coursework assigned in the TinyRenderer project.
 
 ---
+## Development Tracking
 
-## Lesson One: Wireframe Rendering
+The following devlog tracks my progress in implementing my OpenGL backend.
+It follows the same lesson structure as the TinyRenderer coursework.
+
+### Lesson One: Wireframe Rendering
 
 The first step to building a renderer was to render a file filled with 3D vectors (an `obj` file) by drawing lines on the screen. 
 This was done by using the [Bresenham's Line Algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm).
@@ -25,7 +29,7 @@ To build off of this wireframe, we can fill in the triangles made by the wirefra
 
 ![Wireframe Render](/devlog/lesson-1-wireframe.png)
 
-## Lesson Two: Fill Wireframe With Triangles
+### Lesson Two: Fill Wireframe With Triangles
 
 The next step was to fill and illuminate the space between wireframe lines.
 We can assume all triangles drawn will be filled in. 
@@ -36,7 +40,7 @@ Note that negative dot products mean that the light source is behind the polygon
 
 ![Triangles Filled In](/devlog/lesson-2-triangles.png)
 
-## Lesson Three: Only Render Visible Model
+### Lesson Three: Only Render Visible Model
 
 The larger a model gets, the harder a computer will have to work to render it completely.
 We can mitigate this by only rendering what's visible. 
@@ -48,7 +52,7 @@ To achieve this, the z-axis is rasterized and inserted into the x- and y-axis bu
 ![Only Render Visible Model](/devlog/lesson-3-colouring.png)
 
 
-## Lesson Four: Perspective Rendering
+### Lesson Four: Perspective Rendering
 
 Before tackling perspective rendering, we can use texture TGA images to add an actual texture to all of the rasterized triangles drawn from earlier.
 Afterwards, we shift our focus to perspective shifting.
@@ -59,7 +63,7 @@ This is one (very remedial) way of achieving orthographic projections of models 
 
 ![Perspective Rendering](/devlog/lesson-4-perspective.png)
 
-## Lesson Five: Gouraud Shading
+### Lesson Five: Gouraud Shading
 
 We improve the shading mechanism by interpolating the intensity of each vertex. 
 This is known as [Gouaud Shading](https://en.wikipedia.org/wiki/Gouraud_shading) and it vastly improves the look and feel of the model.
@@ -68,7 +72,7 @@ We also add a "camera" by means of a view vector that can be used to recalculate
 
 ![Gouraud Shading](/devlog/lesson-5-gouraud-shading.png)
 
-## Lesson Six: Shaders
+### Lesson Six: Shaders
 
 Implementing shaders is a must for any good rendering engine. 
 The Gouraud Shading from earlier is a good start, but we can refactor it to be much more robust. 
@@ -81,7 +85,7 @@ The final results finally look like actual 3D models and not painted wireframes.
 ![Shaders](/devlog/lesson-6-shading.png)
 
 
-## Lesson Seven: Shadow Mapping
+### Lesson Seven: Shadow Mapping
 
 We implement a shadow buffer vector that's used to compute the intensity of all points on the render.
 The viewport's normal is used to compute intensity and then vectors and meshes that overlap have a shadow applied to them. It's similar to how the Gouraud Shader was implemented, only now we're keeping track of overlapping vectors in the 3D space.
