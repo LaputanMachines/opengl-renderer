@@ -91,3 +91,22 @@ We implement a shadow buffer vector that's used to compute the intensity of all 
 The viewport's normal is used to compute intensity and then vectors and meshes that overlap have a shadow applied to them. It's similar to how the Gouraud Shader was implemented, only now we're keeping track of overlapping vectors in the 3D space.
 
 ![Shadow Mapping](/devlog/lesson-7-shadow-mapping.png)
+
+### Lesson Eight: Ambient Occlusion Map
+
+The final mechanism to add is AO, ambient occlusion mapping.
+This doesn't use an approximated light source like before, instead opting for an entirely ambient lighting source. 
+Most 3D games these days have an option for AO, and it makes a big difference when detailed, lit models are rendered on 4K monitors.
+You can randomly select `x` points from the model and compute their global illumination. 
+You can store these illumination values in a buffer.
+This simple method allows a pre-computation of the AO map for the model.
+
+![Shadow Mapping](/devlog/lesson-8-ambient-occlusion.png)
+
+### Final Results
+
+To obtain the final result, we swap the white colour of our SSAO implementation for the actual colour of the fragment instance. 
+The result is our rendered head model. 
+You can pass in different `obj` files into the main program and it will render them well.
+
+![Shadow Mapping](/devlog/final-results.png)
