@@ -1,4 +1,4 @@
 theme: jekyll-theme-hacker
 show_downloads: "true"
 title: "OpenGL Rendering Engine"
-description: "OpenGL rendering engine written in pure C++."
+description: "OpenGL rendering engine written in pure C++"
